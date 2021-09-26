@@ -72,7 +72,7 @@ In feite verandert de hoeveelheid breking met de luchttemperatuur, -druk en de h
 
 We zullen de volgende symbolen gebruiken:
 
-$L$ = geografische lengtegraad van de waarnemer in graden, *positief gemeten ten westen van Greenwich*, negatief ten oosten (zie hoofdstuk 13);
+$L$ = geografische lengtegraad van de waarnemer in graden, *positief gemeten ten oosten van Greenwich*, negatief ten westen (zie hoofdstuk 13);
 
 $\varphi$ = geografische breedte van de waarnemer, positief op het noordelijk halfrond, negatief op het zuidelijk halfrond;
 
@@ -99,12 +99,12 @@ De rechte klimmingen moeten ook in *graden* worden uitgedrukt.
 
 We berekenen eerst de *geschatte* tijden als volgt.
 
-$H_0 = \frac{\sin{h_0}-\sin{\delta_2}}{\cos{\varphi}\cos{\delta_2}}$
+$\cos{H_0} = \frac{\sin{h_0}-\sin{\varphi}\sin{\delta_2}}{\cos{\varphi}\cos{\delta_2}}$
 
 Let op! Test eerst of het tweede lid tussen -1 en +1 ligt voordat $H_0$ wordt berekend. Zie noot 2 aan het einde van dit hoofdstuk.
 Druk $H_0$ uit in graden. $H_0$ moet tussen 0° en +180° worden genomen. Dann hebben we:
 
-* voor de doorvoer: $m_0 = \frac{\alpha_2+L-\Theta_0}{360}$
+* voor de doorvoer: $m_0 = \frac{\alpha_2-L-\Theta_0}{360}$
 * voor de opgang: $m_1 = m_0 - \frac{H_0}{360}$
 * voor de ondergang: $m_1 = m_0 + \frac{H_0}{360}$
 
