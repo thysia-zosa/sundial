@@ -1,4 +1,4 @@
-package com.example.sundial
+package com.example.richtungsanzeiger
 
 import io.flutter.embedding.android.FlutterActivity
 
