@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "sundial")
-set(APPLICATION_ID "com.example.sundial")
+set(BINARY_NAME "zonnewijzer")
+set(APPLICATION_ID "io.github.thysia-zosa.zonnewijzer")
 
 cmake_policy(SET CMP0063 NEW)
 
