@@ -5,6 +5,7 @@ import 'dart:math' as math;
 
 class ThuisScherm extends StatefulWidget {
   const ThuisScherm({Key? key}) : super(key: key);
+  static String routeNaam = '/zonnewijzer';
 
   @override
   State<ThuisScherm> createState() => _ThuisSchermState();

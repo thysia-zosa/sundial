@@ -9,7 +9,10 @@ class Zonnewijzer extends StatelessWidget {
     return MaterialApp(
       title: 'Zonnewijzer',
       theme: ThemeData.dark(),
-      home: ThuisScherm(),
+      initialRoute: ThuisScherm.routeNaam,
+      routes: {
+        ThuisScherm.routeNaam: (context) => ThuisScherm(),
+      },
     );
   }
 }
