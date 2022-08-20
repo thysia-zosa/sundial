@@ -12,17 +12,15 @@
 //   return Stream<int>.periodic(const Duration(seconds: 2), (_) => ++k);
 // }
 
-import 'dart:async';
+import 'dart:io';
 
 import 'package:zonnewijzer/src/logica/kalender.dart';
-import 'package:zonnewijzer/src/modellen/zonnetijd.dart';
 
 void main() {
   Kalender kalender = Kalender();
-  StreamSubscription zonnetijdStroom =
-      kalender.krijgZonnetijdStroom().listen((tijd) {
+  kalender.krijgZonnetijdStroom().listen((tijd) {
     int uur = tijd.uur.toInt();
     double minuut = tijd.uur.remainder(1) * 60;
-    print('$uur:$minuut');
+    stdout.writeln('$uur:$minuut');
   });
 }

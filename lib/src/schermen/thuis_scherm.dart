@@ -1,15 +1,14 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:zonnewijzer/src/gereedschappen/daten.dart';
-import 'package:zonnewijzer/src/logica/kalender.dart';
 import 'dart:math' as math;
 
-import 'package:zonnewijzer/src/modellen/zonnetijd.dart';
+import 'package:flutter/material.dart';
+
+import '../gereedschappen/daten.dart' as daten;
+import '../logica/kalender.dart';
+import '../modellen/zonnetijd.dart';
 
 class ThuisScherm extends StatefulWidget {
   const ThuisScherm({Key? key}) : super(key: key);
-  static String routeNaam = '/zonnewijzer';
+  static String routeNaam = '/';
 
   @override
   State<ThuisScherm> createState() => _ThuisSchermState();
@@ -17,32 +16,14 @@ class ThuisScherm extends StatefulWidget {
 
 class _ThuisSchermState extends State<ThuisScherm> {
   final Kalender kalender = Kalender();
-  double _hours = 0;
-  double _minutes = 0;
-
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   _calculateTime();
-  // }
-
-  // void _calculateTime() {
-  //   DateTime now = DateTime.now();
-  //   setState(() {
-  //     _hours = now.hour + now.minute / 60;
-  //     _minutes = now.minute + now.second / 60;
-  //     Timer(Duration(seconds: 5), _calculateTime);
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/jerusalem.jpg'),
+            image: AssetImage('assets/images/background.png'),
             fit: BoxFit.cover,
             opacity: 0.3,
           ),
@@ -55,31 +36,31 @@ class _ThuisSchermState extends State<ThuisScherm> {
                   stream: kalender.krijgZonnetijdStroom(),
                   builder: (context, snapshot) {
                     return !snapshot.hasData
-                        ? Center(
+                        ? const Center(
                             child: CircularProgressIndicator(),
                           )
                         : Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}, ${snapshot.data!.dag}.${snapshot.data!.joodseMaand}',
-                                style: TextStyle(
+                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}, ${snapshot.data!.dag}.${snapshot.data!.joodseMaand}',
+                                style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 30.0,
                                 ),
                               ),
-                              Divider(
+                              const Divider(
                                 thickness: 2.0,
                               ),
                               Padding(
-                                padding: EdgeInsets.all(20.0),
+                                padding: const EdgeInsets.all(20.0),
                                 child: Stack(
                                   children: [
                                     Container(
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         image: DecorationImage(
                                           image: AssetImage(
-                                              'assets/images/clock1.png'),
+                                              'assets/images/clock.png'),
                                           fit: BoxFit.contain,
                                         ),
                                       ),
@@ -106,7 +87,7 @@ class _ThuisSchermState extends State<ThuisScherm> {
                                       decoration: const BoxDecoration(
                                         image: DecorationImage(
                                           image: AssetImage(
-                                              'assets/images/minute1.png'),
+                                              'assets/images/minute.png'),
                                           fit: BoxFit.contain,
                                         ),
                                       ),
@@ -115,21 +96,21 @@ class _ThuisSchermState extends State<ThuisScherm> {
                                   ],
                                 ),
                               ),
-                              Divider(
+                              const Divider(
                                 thickness: 2.0,
                               ),
                               Text(
-                                '${talen['nederlands']['maanden'][snapshot.data?.hidjriMaand ?? 0]} ${snapshot.data?.hidjriJaar ?? 0}',
-                                style: TextStyle(
+                                '${daten.talen['nederlands']['maanden'][snapshot.data?.hidjriMaand ?? 0]} ${snapshot.data?.hidjriJaar ?? 0}',
+                                style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 30.0,
                                 ),
                               ),
                               Text(
-                                talen['nederlands']['groeten'][
-                                    tijden.indexWhere((element) =>
+                                daten.talen['nederlands']['groeten'][
+                                    daten.tijden.indexWhere((element) =>
                                         element <= (snapshot.data?.uur ?? 0))],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 40.0,
                                 ),

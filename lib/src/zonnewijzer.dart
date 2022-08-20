@@ -11,7 +11,7 @@ class Zonnewijzer extends StatelessWidget {
       theme: ThemeData.dark(),
       initialRoute: ThuisScherm.routeNaam,
       routes: {
-        ThuisScherm.routeNaam: (context) => ThuisScherm(),
+        ThuisScherm.routeNaam: (context) => const ThuisScherm(),
       },
     );
   }

@@ -24,11 +24,13 @@
 //   print(oudJaar);
 // }
 
+import 'dart:io';
+
 import 'package:zonnewijzer/src/logica/kalender.dart';
 import 'package:zonnewijzer/src/modellen/zonnetijd.dart';
 
 void main() {
   Kalender kal = Kalender();
   Zonnetijd tijd = kal.krijgZonnetijd(1);
-  print(tijd.toString());
+  stdout.writeln(tijd.toString());
 }
