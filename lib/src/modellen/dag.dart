@@ -1,51 +1,53 @@
 import 'dart:math' as math;
 
 import 'locatie.dart';
+import 'maand.dart';
 
 class Dag {
   final int dagInHetJaar;
-  final DateTime vandaag;
-  final int nieweMaandInHetJaar;
+  final DateTime datum;
+  final Maand maand;
   final Locatie locatie;
   late final int _vertraging;
   late final int _halfDag;
-  late final DateTime _zonsOpgang;
-  late final DateTime _zonsOndergang;
+  late final int _zonsOpgang;
+  late final int _zonsOndergang;
 
-  DateTime get zonsOpgang => _zonsOpgang;
-  DateTime get zonsOndergang => _zonsOndergang;
+  int get zonsOpgang => _zonsOpgang;
+  int get zonsOndergang => _zonsOndergang;
+  int get maandDag => dagInHetJaar - maand.nieuweMaandInHetJaar + 1;
 
   Dag({
     required this.dagInHetJaar,
-    required this.vandaag,
-    required this.nieweMaandInHetJaar,
+    required this.datum,
+    required this.maand,
     this.locatie = const Locatie(breedte: 47.475683, lengte: 8.22245),
   }) {
     _vertraging = _berekenVertraging();
     _halfDag = _berekenHalfDag();
     _zonsOpgang = DateTime(
-      vandaag.year,
-      vandaag.month,
-      vandaag.day,
+      datum.year,
+      datum.month,
+      datum.day,
       12,
       0,
       0,
       _vertraging - _halfDag,
-    );
+    ).millisecondsSinceEpoch;
     _zonsOndergang = DateTime(
-      vandaag.year,
-      vandaag.month,
-      vandaag.day,
+      datum.year,
+      datum.month,
+      datum.day,
       12,
       0,
       0,
       _vertraging + _halfDag,
-    );
+    ).millisecondsSinceEpoch;
   }
 
   int _berekenVertraging() {
     double basis =
-        vandaag.timeZoneOffset.inMilliseconds - locatie.lengte * 240000;
+        datum.timeZoneOffset.inMilliseconds - locatie.lengte * 240000;
     return (basis +
             615600 * math.sin(0.0337 * dagInHetJaar + 0.465) +
             442440 * math.sin(0.01787 * dagInHetJaar - 0.168))

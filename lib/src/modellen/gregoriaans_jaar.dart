@@ -1,28 +1,29 @@
 class GregoriaansJaar {
   int jaarGetal;
-  final int _goudenGetal;
-  final int _epacta;
-  final bool _isSchrikkeljaar;
+  late final int _goudenGetal;
+  late final int _epacta;
+  late final bool _isSchrikkeljaar;
   late final List<int> _nieuweMaanden;
-  final int _zondagsGetal;
+  late final int _zondagsGetal;
 
   GregoriaansJaar(
     this.jaarGetal,
-  )   : _goudenGetal = jaarGetal % 19 + 1,
-        _isSchrikkeljaar =
-            jaarGetal % 400 == 0 || jaarGetal % 4 == 0 && jaarGetal % 100 != 0,
-        _zondagsGetal = (0 -
-                jaarGetal -
-                (jaarGetal / 4).floor() -
-                (jaarGetal / 400).floor() +
-                (jaarGetal / 100).floor()) %
-            7,
-        _epacta = (26 +
-                    11 * (jaarGetal % 19 + 1) +
-                    ((jaarGetal / 100 + 11).floor() * 8 / 25 - 3).floor() -
-                    ((jaarGetal / 100 + 1).floor() * 3 / 4).floor()) %
-                30 +
-            1 {
+  ) {
+    _goudenGetal = jaarGetal % 19 + 1;
+    _isSchrikkeljaar =
+        jaarGetal % 400 == 0 || jaarGetal % 4 == 0 && jaarGetal % 100 != 0;
+    _zondagsGetal = (0 -
+            jaarGetal -
+            (jaarGetal / 4).floor() -
+            (jaarGetal / 400).floor() +
+            (jaarGetal / 100).floor()) %
+        7;
+    _epacta = (26 +
+                11 * (jaarGetal % 19 + 1) +
+                ((jaarGetal / 100 + 11).floor() * 8 / 25 - 3).floor() -
+                ((jaarGetal / 100 + 1).floor() * 3 / 4).floor()) %
+            30 +
+        1;
     int vroeger = _epacta < (_goudenGetal > 11 ? 26 : 25) ? 1 : 0;
     _nieuweMaanden = [
       1 - _epacta,
