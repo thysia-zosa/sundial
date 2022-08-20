@@ -14,4 +14,14 @@ class Zonnetijd {
     required this.hidjriJaar,
     required this.uur,
   });
+
+  @override
+  String toString() {
+    return '''weekdag: $weekdag
+dag: $dag
+joodseMaand: $joodseMaand
+hidjriMaand: $hidjriMaand
+hidjriJaar: $hidjriJaar
+uur: $uur''';
+  }
 }
