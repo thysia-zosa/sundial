@@ -25,8 +25,8 @@ class Kalender {
     dezeMaand = Maand(
       gregoriaansJaar: ditJaar.jaarGetal,
       epacta: ditJaar.epacta,
-      nieuweMaandInHetJaar: ditJaar.nieweMaanden.firstWhere(
-        (element) => element >= dagInHetJaar,
+      nieuweMaandInHetJaar: ditJaar.nieweMaanden.lastWhere(
+        (element) => element <= dagInHetJaar,
       ),
     );
     vandaag = Dag(
