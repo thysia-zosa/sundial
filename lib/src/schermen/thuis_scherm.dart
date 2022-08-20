@@ -54,7 +54,6 @@ class _ThuisSchermState extends State<ThuisScherm> {
               child: StreamBuilder<Zonnetijd>(
                   stream: kalender.krijgZonnetijdStroom(),
                   builder: (context, snapshot) {
-                    print(snapshot.data?.uur);
                     return !snapshot.hasData
                         ? Center(
                             child: CircularProgressIndicator(),
