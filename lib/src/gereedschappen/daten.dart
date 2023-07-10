@@ -25,23 +25,19 @@ Map<String, dynamic> talen = {
       'Doelhidja',
     ],
     'groeten': <String>[
+      'Avondgebed\nNachtgebed',
       'Avondgebed',
-      'Middaggebed',
-      'Voormiddag',
       'Morgengebed',
-      'Middernacht',
-      'Dagsluiting',
       'Nachtgebed',
+      'Avondgebed\nNachtgebed',
     ]
   },
 };
 
 List<int> tijden = [
-  22,
+  23,
   18,
-  15,
-  11,
-  2,
-  1,
+  10,
+  4,
   0,
 ];
