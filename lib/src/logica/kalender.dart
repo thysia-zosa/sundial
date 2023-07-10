@@ -88,7 +88,7 @@ class Kalender {
   }
 
   Stream<Zonnetijd> krijgZonnetijdStroom() => Stream<Zonnetijd>.periodic(
-        const Duration(seconds: 5),
+        const Duration(seconds: 1),
         krijgZonnetijd,
       );
 
