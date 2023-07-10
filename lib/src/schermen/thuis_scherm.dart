@@ -99,13 +99,13 @@ class _ThuisSchermState extends State<ThuisScherm> {
                               const Divider(
                                 thickness: 2.0,
                               ),
-                              Text(
-                                '${daten.talen['nederlands']['maanden'][snapshot.data?.hidjriMaand ?? 0]} ${snapshot.data?.hidjriJaar ?? 0}',
-                                style: const TextStyle(
-                                  fontFamily: 'Gentium',
-                                  fontSize: 30.0,
-                                ),
-                              ),
+                              // Text(
+                              //   '${daten.talen['nederlands']['maanden'][snapshot.data?.hidjriMaand ?? 0]} ${snapshot.data?.hidjriJaar ?? 0}',
+                              //   style: const TextStyle(
+                              //     fontFamily: 'Gentium',
+                              //     fontSize: 30.0,
+                              //   ),
+                              // ),
                               Text(
                                 daten.talen['nederlands']['groeten'][
                                     daten.tijden.indexWhere((element) =>
