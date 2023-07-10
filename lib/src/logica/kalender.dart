@@ -147,6 +147,7 @@ class Kalender {
       weekdag: dag.datum.weekday,
       dag: dag.maandDag,
       joodseMaand: dag.maand.joodseMaand,
+      joodsJaar: dag.maand.joodsJaar,
       hidjriMaand: dag.maand.hidjriMaand,
       hidjriJaar: dag.maand.hidjriJaar,
       uur: uur,

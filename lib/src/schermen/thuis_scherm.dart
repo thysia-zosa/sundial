@@ -43,7 +43,7 @@ class _ThuisSchermState extends State<ThuisScherm> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}, ${snapshot.data!.dag}.${snapshot.data!.joodseMaand}',
+                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}, ${snapshot.data!.dag}.${snapshot.data!.joodseMaand}.${snapshot.data!.joodsJaar + 1744}',
                                 style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 30.0,
