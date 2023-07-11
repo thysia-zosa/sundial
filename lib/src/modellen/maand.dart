@@ -6,6 +6,7 @@ class Maand {
   late int _joodsJaar;
   late int _hidjriMaand;
   late int _hidjriJaar;
+  late bool _isSchrikkelMaand;
 
   Maand({
     required this.gregoriaansJaar,
@@ -15,6 +16,7 @@ class Maand {
     _joodseMaand = nieuweMaandInHetJaar < 67
         ? ((nieuweMaandInHetJaar + (epacta + 25) % 30 + 299) / 29.5).round()
         : ((nieuweMaandInHetJaar + (epacta + 6) % 30 - 66) / 29.5).round();
+    _isSchrikkelMaand = _joodseMaand == 12 && nieuweMaandInHetJaar < 37;
     int maandenSindsNull =
         (((gregoriaansJaar - 622) * 365.2425 + nieuweMaandInHetJaar - 209) *
                 360 /
@@ -27,6 +29,7 @@ class Maand {
   }
 
   int get joodseMaand => _joodseMaand;
+  bool get isSchrikkelMaand => _isSchrikkelMaand;
   int get joodsJaar => _joodsJaar;
   int get hidjriMaand => _hidjriMaand;
   int get hidjriJaar => _hidjriJaar;

@@ -43,11 +43,12 @@ class _ThuisSchermState extends State<ThuisScherm> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}, ${snapshot.data!.dag}.${snapshot.data!.joodseMaand}.${snapshot.data!.joodsJaar + 1744}',
+                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}\n${snapshot.data!.dag} ${daten.talen['nederlands']['maanden'][snapshot.data!.isSchrikkelMaand ? 0 : snapshot.data!.joodseMaand]} ${snapshot.data!.joodsJaar + 1744}',
                                 style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 30.0,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                               const Divider(
                                 thickness: 2.0,
@@ -114,6 +115,7 @@ class _ThuisSchermState extends State<ThuisScherm> {
                                   fontFamily: 'Gentium',
                                   fontSize: 40.0,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           );

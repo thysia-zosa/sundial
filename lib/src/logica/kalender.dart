@@ -148,6 +148,7 @@ class Kalender {
       dag: dag.maandDag,
       joodseMaand: dag.maand.joodseMaand,
       joodsJaar: dag.maand.joodsJaar,
+      isSchrikkelMaand: dag.maand.isSchrikkelMaand,
       hidjriMaand: dag.maand.hidjriMaand,
       hidjriJaar: dag.maand.hidjriJaar,
       uur: uur,

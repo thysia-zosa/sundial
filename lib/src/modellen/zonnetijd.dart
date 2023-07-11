@@ -3,6 +3,7 @@ class Zonnetijd {
   final int dag;
   final int joodseMaand;
   final int joodsJaar;
+  final bool isSchrikkelMaand;
   final int hidjriMaand;
   final int hidjriJaar;
   final double uur;
@@ -12,6 +13,7 @@ class Zonnetijd {
     required this.dag,
     required this.joodseMaand,
     required this.joodsJaar,
+    required this.isSchrikkelMaand,
     required this.hidjriMaand,
     required this.hidjriJaar,
     required this.uur,
@@ -23,6 +25,7 @@ class Zonnetijd {
 dag: $dag
 joodseMaand: $joodseMaand
 joodsJaar: $joodsJaar
+isSchrikkelMaand: $isSchrikkelMaand
 hidjriMaand: $hidjriMaand
 hidjriJaar: $hidjriJaar
 uur: $uur''';
