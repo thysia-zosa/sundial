@@ -1,6 +1,8 @@
+import 'dag.dart';
+
 class Zonnetijd {
   final int weekdag;
-  final int dag;
+  final Dag dag;
   final int joodseMaand;
   final int joodsJaar;
   final bool isSchrikkelMaand;

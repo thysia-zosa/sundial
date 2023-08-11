@@ -1,0 +1,11 @@
+const double kHebreeuwseMaandLengte = 765433 / 25920;
+const double kHebreeuwseJaarLengte = 235 / 19;
+const int kCyclusCharakter = 17875;
+const int kMaandCharakter = 13753;
+const int kEpochCharakter = 5604;
+const int kCyclusInDagen = 6939;
+const int kDagenInMaand = 29;
+const int kDagInChalaqim = 25920;
+const int kBetutaqpat = 16789;
+const int kMiddag = 19440;
+const int kGatrad = 9924;

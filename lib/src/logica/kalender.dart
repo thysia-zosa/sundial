@@ -145,7 +145,7 @@ class Kalender {
   Zonnetijd _zetZonnetijd({required Dag dag, required double uur}) {
     return Zonnetijd(
       weekdag: dag.datum.weekday,
-      dag: dag.maandDag,
+      dag: dag,
       joodseMaand: dag.maand.joodseMaand,
       joodsJaar: dag.maand.joodsJaar,
       isSchrikkelMaand: dag.maand.isSchrikkelMaand,

@@ -43,7 +43,7 @@ class _ThuisSchermState extends State<ThuisScherm> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}\n${snapshot.data!.dag} ${daten.talen['nederlands']['maanden'][snapshot.data!.isSchrikkelMaand ? 0 : snapshot.data!.joodseMaand]} ${snapshot.data!.joodsJaar + 1744}',
+                                '${daten.talen['nederlands']['weekdagen'][snapshot.data!.weekdag]}\n${snapshot.data!.dag.hebreeuwsDatum.hebreeuwseDag} ${daten.talen['nederlands']['hebreeuwseMaanden'][snapshot.data!.dag.hebreeuwsDatum.hebreeuwseMaand]} ${snapshot.data!.dag.hebreeuwsDatum.hebreeuwsJaar.jaar}',
                                 style: const TextStyle(
                                   fontFamily: 'Gentium',
                                   fontSize: 30.0,
@@ -100,13 +100,13 @@ class _ThuisSchermState extends State<ThuisScherm> {
                               const Divider(
                                 thickness: 2.0,
                               ),
-                              // Text(
-                              //   '${daten.talen['nederlands']['maanden'][snapshot.data?.hidjriMaand ?? 0]} ${snapshot.data?.hidjriJaar ?? 0}',
-                              //   style: const TextStyle(
-                              //     fontFamily: 'Gentium',
-                              //     fontSize: 30.0,
-                              //   ),
-                              // ),
+                              Text(
+                                '${daten.talen['nederlands']['arabischeMaanden'][snapshot.data!.dag.hebreeuwsDatum.arabischeMaand]} ${snapshot.data!.dag.hebreeuwsDatum.arabischJaar}',
+                                style: const TextStyle(
+                                  fontFamily: 'Gentium',
+                                  fontSize: 30.0,
+                                ),
+                              ),
                               Text(
                                 daten.talen['nederlands']['groeten'][
                                     daten.tijden.indexWhere((element) =>

@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'hebreeuws_datum.dart';
 import 'locatie.dart';
 import 'maand.dart';
 
@@ -8,6 +9,7 @@ class Dag {
   final DateTime datum;
   final Maand maand;
   final Locatie locatie;
+  final HebreeuwsDatum hebreeuwsDatum;
   late final int _vertraging;
   late final int _halfDag;
   late final int _zonsOpgang;
@@ -22,7 +24,7 @@ class Dag {
     required this.datum,
     required this.maand,
     this.locatie = const Locatie(breedte: 47.475683, lengte: 8.22245),
-  }) {
+  }) : hebreeuwsDatum = HebreeuwsDatum(datum: datum) {
     _vertraging = _berekenVertraging();
     _halfDag = _berekenHalfDag();
     _zonsOpgang = DateTime(
